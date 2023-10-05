@@ -1,0 +1,11 @@
+!pip install -q transformers
+from transformers import *
+# By now we do not use fast tokenizer so we create the tokenizer with the object {"use_fast": False}
+nlp = pipeline(
+    'question-answering',
+    model='mrm8488/distill-bert-base-spanish-wwm-cased-finetuned-spa-squad2-es',
+    tokenizer=(
+        'mrm8488/distill-bert-base-spanish-wwm-cased-finetuned-spa-squad2-es',
+        {"use_fast": False}
+    )
+)
